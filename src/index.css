@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --valorant-red: #bf4044;
+  --valorant-bg-dark: #1a1a1f;
+  --valorant-bg-light: #e7dfdd;
+  --valorant-grey: #383c48;
+  --valorant-off-black: #18181a;
+  --valorant-btn-shadow: 0 4px 20px rgba(191, 64, 68, 0.12);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  color: var(--valorant-bg-dark);
+  background: var(--valorant-bg-dark);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', 'Arial Black', sans-serif;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  color: var(--valorant-bg-dark);
+}
+
+button, .valorant-btn {
+  background: var(--valorant-red);
+  color: #fff;
+  border: none;
+  padding: 1rem 2.25rem;
+  font-family: 'Oswald', Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 0;
+  box-shadow: var(--valorant-btn-shadow);
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.18s;
+}
+
+button:hover, .valorant-btn:hover {
+  background: #a63135;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 36px rgba(191, 64, 68, 0.25);
+}
+
+a {
+  color: var(--valorant-red);
+  text-decoration: none;
+  transition: color 0.12s;
+}
+a:hover {
+  color: #a63135;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnim 0.8s ease-out 0.15s forwards;
+}
+@keyframes fadeInAnim {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUpAnim 0.95s cubic-bezier(.28,.85,.42,1.05) forwards;
+}
+@keyframes slideUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility */
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--valorant-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--valorant-grey);
+  border-radius: 6px;
+}
